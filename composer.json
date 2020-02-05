@@ -1,0 +1,12 @@
+{
+    "name": "phptheme/theme-bootstrap4",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PhpTheme\\Themes\Bootstrap4\\" : ""
+        }
+    },
+    "require": {
+        "phptheme/bootstrap4": "*"
+    }
+}
