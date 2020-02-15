@@ -9,4 +9,25 @@ namespace PhpTheme\Themes\Bootstrap4;
 class GridCellBoolean extends \PhpTheme\Bootstrap4\GridCell
 {
 
+    public $yesLabel = 'Yes';
+
+    public $noLabel = 'No';
+
+    protected function getYesLabel()
+    {
+        return $this->yesLabel;
+    }
+
+    protected function getNoLabel()
+    {
+        return $this->noLabel;
+    }
+
+    public function getContent()
+    {
+        $value = parent::getContent();
+
+        return $value ? $this->getYesLabel() : $this->getNoLabel();
+    }
+
 }

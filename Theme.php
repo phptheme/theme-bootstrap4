@@ -49,6 +49,8 @@ class Theme extends \PhpTheme\Bootstrap4\Theme
 
     const GRID_CELL_BUTTON = GridCellButton::class;
 
+    const GRID_CELL_BOOLEAN = GridCellBoolean::class;
+
     protected $_layout;    
 
     public function beginLayout(array $options = [])
