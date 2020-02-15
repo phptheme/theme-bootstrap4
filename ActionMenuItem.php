@@ -11,12 +11,8 @@ class ActionMenuItem extends \PhpTheme\Bootstrap4\MenuItem
 
     public $tag = 'li';
 
-    public $attributes = [
-        'class' => 'nav-item'
-    ];
+    public $attributes = ['class' => ['nav-item']];
 
-    public $linkAttributes = [
-        'class' => 'nav-link'
-    ];
+    public $linkAttributes = ['class' => ['nav-link']];
 
 }

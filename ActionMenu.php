@@ -14,8 +14,8 @@ class ActionMenu extends \PhpTheme\Bootstrap4\Menu
     public $tag = 'ul';
 
     public $attributes = [
-        'class' => 'nav nav-pills justify-content-end',
-        'style' => 'float: right;'
+        'class' => ['nav', 'nav-pills', 'justify-content-end'],
+        'style' => ['float' => 'right']
     ];
 
     public function toString() : string

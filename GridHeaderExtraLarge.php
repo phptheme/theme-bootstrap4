@@ -9,8 +9,8 @@ namespace PhpTheme\Themes\Bootstrap4;
 class GridHeaderExtraLarge extends \PhpTheme\Bootstrap4\GridHeader
 {
 
-    public $defaultAttributes = ['class' => 'd-none', 'd-xl-table-cell'];
+    public $defaultAttributes = ['class' => ['d-none', 'd-xl-table-cell']];
 
-    public $defaultCellAttributes = ['class' => 'd-none', 'd-xl-table-cell'];
+    public $defaultCellAttributes = ['class' => ['d-none', 'd-xl-table-cell']];
 
 }

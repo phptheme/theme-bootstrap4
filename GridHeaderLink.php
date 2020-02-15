@@ -9,8 +9,8 @@ namespace PhpTheme\Themes\Bootstrap4;
 class GridHeaderLink extends \PhpTheme\Bootstrap4\GridHeader
 {
 
-    public $defaultAttributes = ['style' => 'width: 1%; white-space: nowrap;'];
+    public $defaultAttributes = ['style' => ['width' => '1%', 'white-space' => 'nowrap']];
 
-    public $defaultCellAttributes = ['style' => 'width: 1%; white-space: nowrap;'];
+    public $defaultCellAttributes = ['style' => ['width' => '1%', 'white-space' => 'nowrap']];
 
 }

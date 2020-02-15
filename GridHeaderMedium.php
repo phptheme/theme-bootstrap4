@@ -9,8 +9,8 @@ namespace PhpTheme\Themes\Bootstrap4;
 class GridHeaderMedium extends \PhpTheme\Bootstrap4\GridHeader
 {
 
-    public $defaultAttributes = ['class' => 'd-none', 'd-md-table-cell'];
+    public $defaultAttributes = ['class' => ['d-none', 'd-md-table-cell']];
 
-    public $defaultCellAttributes = ['class' => 'd-none', 'd-md-table-cell'];
+    public $defaultCellAttributes = ['class' => ['d-none', 'd-md-table-cell']];
 
 }
