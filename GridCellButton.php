@@ -9,15 +9,17 @@ namespace PhpTheme\Themes\Bootstrap4;
 class GridCellButton extends GridCellLink
 {
 
-    public $template = '<i class="{icon}"></i>';
-
     public $icon = 'fa fa-circle';
 
-    protected function renderLink(array $params = [], array $linkAttributes = []) : string
+    protected function renderLink(array $options = []) : string
     {
-        $params['{icon}'] = $this->icon;
+        $options['label'] = null;
 
-        return parent::renderLink($params, $linkAttributes);
+        $options['icon'] = $this->icon;
+
+        $options['attributes']['title'] = $this->getLabel(); 
+
+        return parent::renderLink($options);
     }
 
 }

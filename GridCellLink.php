@@ -6,43 +6,67 @@
  */
 namespace PhpTheme\Themes\Bootstrap4;
 
-use PhpTheme\HtmlHelper\HtmlHelper;
+use PhpTheme\Core\Link;
+use PhpTheme\Core\HtmlHelper;
 
 class GridCellLink extends \PhpTheme\Bootstrap4\GridCell
 {
+
+    const LINK = Link::class;
 
     public $url;
 
     public $label;
 
-    public $linkTag = 'a';
+    public $defaultLinkAttributes = [];
 
     public $linkAttributes = [];
+
+    public $linkTag = 'a';
 
     public $template = '{label}';
 
     public $params = [];
 
-    protected function renderLink(array $params = [], array $linkAttributes = []) : string
+    protected function getUrl()
     {
-        $content = strtr($this->template, $params);
+        return $this->url;
+    }
 
-        return HtmlHelper::tag($this->linkTag, $content, $linkAttributes);
+    protected function getLabel()
+    {
+        return $this->label;
+    }
+
+    protected function renderTemplate(array $params = []) : string
+    {
+        return strtr($this->template, $params);
+    }
+
+    protected function renderLink(array $options = []) : string
+    {
+        $linkClass = static::LINK;
+
+        $link = new $linkClass($options);
+
+        return $link->toString();
     }
 
     public function getContent()
     {
-        $linkAttributes = $this->linkAttributes;
+        $linkAttributes = HtmlHelper::mergeAttributes(
+            $this->defaultLinkAttributes, 
+            $this->linkAttributes,
+            [
+                'href' => $this->getUrl()
+            ]
+        );
 
-        $linkAttributes['href'] = $this->url;
-
-        $linkAttributes['title'] = $this->label;
-
-        $params = $this->params;
-
-        $params['{label}'] = $this->label;
-
-        return $this->renderLink($params, $linkAttributes);
+        return $this->renderLink([
+            'attributes' => $linkAttributes,
+            'tag' => $this->linkTag,
+            'label' => $this->renderTemplate(['{label}' => $this->getLabel()])
+        ]);
     }
 
 }
