@@ -11,7 +11,7 @@ class GridCellButton extends GridCellLink
 
     public $template = '<i class="{icon}"></i>';
 
-    public $icon = 'fa-times-circle';
+    public $icon = 'fa fa-circle';
 
     protected function renderLink(array $params = [], array $linkAttributes = []) : string
     {
