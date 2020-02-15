@@ -9,8 +9,8 @@ namespace PhpTheme\Themes\Bootstrap4;
 class GridHeaderPrimaryKey extends GridHeaderNumber
 {
 
-    public $defaultAttributes = ['class' => ['d-none', 'd-table-cell']];
+    public $defaultAttributes = ['class' => ['d-none', 'd-sm-table-cell']];
 
-    public $defaultCellAttributes = ['class' => ['d-none', 'd-table-cell']];
+    public $defaultCellAttributes = ['class' => ['d-none', 'd-sm-table-cell']];
 
 }

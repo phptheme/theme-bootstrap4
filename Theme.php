@@ -29,6 +29,8 @@ class Theme extends \PhpTheme\Bootstrap4\Theme
 
     const POST = Post::class;
 
+    const GRID = Grid::class;
+
     const GRID_HEADER_LINK = GridHeaderLink::class;
 
     const GRID_HEADER_BUTTON = GridHeaderButton::class;    
@@ -73,7 +75,7 @@ class Theme extends \PhpTheme\Bootstrap4\Theme
     {
         return $this->widget(static::LAYOUT, array_merge($options, ['theme' => $this]));
     }
-
+    
     public function mainLayout(array $options = [])
     {
         return $this->widget(static::MAIN_LAYOUT, array_merge($options, ['theme' => $this]));

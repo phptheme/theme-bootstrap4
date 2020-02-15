@@ -11,6 +11,6 @@ class GridHeaderLabel extends \PhpTheme\Bootstrap4\GridHeader
 
     public $defaultAttributes = [];
 
-    public $defaultCellAttributes = [];
+    public $defaultCellAttributes = ['class' => ['process']];
 
 }
