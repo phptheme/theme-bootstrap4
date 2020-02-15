@@ -6,7 +6,7 @@
  */
 namespace PhpTheme\Themes\Bootstrap4;
 
-class GridHeaderPrimaryKey extends GridHeaderNumber
+class GridHeaderPrimaryKey extends \PhpTheme\Bootstrap4\GridHeader
 {
 
     public $defaultAttributes = [
