@@ -54,18 +54,13 @@ class GridCellLink extends \PhpTheme\Bootstrap4\GridCell
 
     public function getContent()
     {
-        $linkAttributes = HtmlHelper::mergeAttributes(
-            $this->defaultLinkAttributes, 
-            $this->linkAttributes,
-            [
-                'href' => $this->getUrl()
-            ]
-        );
+        $linkAttributes = HtmlHelper::mergeAttributes($this->defaultLinkAttributes, $this->linkAttributes);
 
         return $this->renderLink([
             'attributes' => $linkAttributes,
             'tag' => $this->linkTag,
-            'label' => $this->renderTemplate(['{label}' => $this->getLabel()])
+            'label' => $this->renderTemplate(['{label}' => $this->getLabel()]),
+            'url' => $this->getUrl()
         ]);
     }
 
