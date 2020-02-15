@@ -45,6 +45,10 @@ class Theme extends \PhpTheme\Bootstrap4\Theme
 
     const GRID_HEADER_LABEL = GridHeaderLabel::class;
 
+    const GRID_HEADER_NUMBER = GridHeaderNumber::class;
+
+    const GRID_HEADER_PRIMARY_KEY = GridHeaderPrimaryKey::class;
+
     const GRID_CELL_LINK = GridCellLink::class;
 
     const GRID_CELL_BUTTON = GridCellButton::class;
@@ -162,7 +166,17 @@ class Theme extends \PhpTheme\Bootstrap4\Theme
 
     public function createGridHeaderButton(array $params = [])
     {
-        return $this->createWidget(static::GRID_CELL_BUTTON, $params);
+        return $this->createWidget(static::GRID_HEADER_BUTTON, $params);
+    }
+
+    public function createGridHeaderNumber(array $params = [])
+    {
+        return $this->createWidget(static::GRID_HEADER_NUMBER, $params);
+    }
+
+    public function createGridHeaderPrimaryKey(array $params = [])
+    {
+        return $this->createWidget(static::GRID_HEADER_PRIMARY_KEY, $params);
     }
 
 }
