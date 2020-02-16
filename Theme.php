@@ -31,6 +31,8 @@ class Theme extends \PhpTheme\Bootstrap4\Theme
 
     const GRID = Grid::class;
 
+    const GRID_HEADER_BOOLEAN = GridHeaderBoolean::class;
+
     const GRID_HEADER_LINK = GridHeaderLink::class;
 
     const GRID_HEADER_BUTTON = GridHeaderButton::class;    
@@ -119,6 +121,11 @@ class Theme extends \PhpTheme\Bootstrap4\Theme
     public function postsItem(array $options = [])
     {
         return $this->widget(static::POSTS_ITEM, $options);
+    }
+
+    public function createGridHeaderBoolean(array $params = [])
+    {
+        return $this->createWidget(static::GRID_HEADER_BOOLEAN, $params);
     }
 
     public function createGridHeaderLink(array $params = [])
