@@ -59,7 +59,16 @@ class Theme extends \PhpTheme\Bootstrap4\Theme
 
     const GRID_CELL_BOOLEAN = GridCellBoolean::class;
 
-    protected $_layout;    
+    protected $_layout;
+
+    public $copyright = '&copy; Copyright {year}.';
+
+    public $poweredBy = 'Powered by <a href="http://getphptheme.com" target="_blank">PhpTheme</a>';
+
+    public function getCopyright()
+    {
+        return strtr($this->copyright, ['{year}' => date('Y')]);
+    }
 
     public function beginLayout(array $options = [])
     {
