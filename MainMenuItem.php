@@ -11,7 +11,7 @@ use PhpTheme\Core\HtmlHelper;
 class MainMenuItem extends \PhpTheme\Bootstrap4\MenuItem
 {
 
-    const SUBMENU = MainMenu2::class;
+    const MENU = MainMenu2::class;
 
     public function toString() : string
     {
