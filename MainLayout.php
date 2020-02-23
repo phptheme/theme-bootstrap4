@@ -11,7 +11,7 @@ class MainLayout extends \PhpTheme\Core\Widget
 
     public $title;
 
-    public $copyright = '&copy; 2019';
+    public $copyright = '&copy; 2019.';
 
     public $siteName = 'Company name';
 
@@ -46,6 +46,8 @@ class MainLayout extends \PhpTheme\Core\Widget
     public $footerMenu = [];
 
     public $footerMenuOptions = [];
+
+    public $poweredBy = 'Powered by <a href="http://getphptheme.com" target="_blank">PhpTheme</a>';
 
     public function toString() : string
     {
@@ -102,7 +104,12 @@ class MainLayout extends \PhpTheme\Core\Widget
             [
                 'items' => $this->footerMenu
             ]
-        ));        
+        ));
+
+        if ($this->poweredBy)
+        {
+            $copyright .= ' ' . $this->poweredBy;
+        }
 
         return $this->render('main-layout', [
             'content' => $this->content,
