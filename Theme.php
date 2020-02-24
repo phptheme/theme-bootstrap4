@@ -61,15 +61,6 @@ class Theme extends \PhpTheme\Bootstrap4\Theme
 
     protected $_layout;
 
-    public $copyright = '&copy; Copyright {year}.';
-
-    public $poweredBy = 'Powered by <a href="http://getphptheme.com" target="_blank">PhpTheme</a>';
-
-    public function getCopyright()
-    {
-        return strtr($this->copyright, ['{year}' => date('Y')]);
-    }
-
     public function beginLayout(array $options = [])
     {
         $this->_layout = $this->beginWidget(static::LAYOUT, array_merge($options, ['theme' => $this]));
