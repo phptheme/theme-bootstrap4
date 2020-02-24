@@ -47,10 +47,10 @@ class MainLayout extends \PhpTheme\Core\Widget
 
     public $footerMenuOptions = [];
 
+    public $copyright;
+
     public function toString() : string
     {
-        $copyright = $this->theme->getCopyright();
-
         $breadcrumbs = $this->breadcrumbsOptions;
 
         $breadcrumbs['items'] = $this->breadcrumbs;
@@ -104,11 +104,6 @@ class MainLayout extends \PhpTheme\Core\Widget
             ]
         ));
 
-        if ($this->theme->poweredBy)
-        {
-            $copyright .= ' ' . $this->theme->poweredBy;
-        }
-
         $layout = $this->layout;
 
         if ($this->title)
@@ -120,7 +115,7 @@ class MainLayout extends \PhpTheme\Core\Widget
             'layout' => $layout,
             'content' => $this->content,
             'title' => $this->title,
-            'copyright' => $copyright,
+            'copyright' => $this->theme->getCopyright($this->copyright),
             'siteName' => $this->siteName,
             'mainMenu' => $mainMenu,
             'actionMenu' => $actionMenu,
