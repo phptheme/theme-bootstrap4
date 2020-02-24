@@ -9,6 +9,8 @@ namespace PhpTheme\Themes\Bootstrap4;
 class MainLayout extends \PhpTheme\Core\Widget
 {
 
+    public $layout = [];
+
     public $title;
 
     public $siteName = 'Company name';
@@ -107,7 +109,15 @@ class MainLayout extends \PhpTheme\Core\Widget
             $copyright .= ' ' . $this->theme->poweredBy;
         }
 
+        $layout = $this->layout;
+
+        if ($this->title)
+        {
+            $layout['title'] = $this->title;
+        }
+
         return $this->render('main-layout', [
+            'layout' => $layout,
             'content' => $this->content,
             'title' => $this->title,
             'copyright' => $copyright,
