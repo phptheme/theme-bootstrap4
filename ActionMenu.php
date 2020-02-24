@@ -18,13 +18,4 @@ class ActionMenu extends \PhpTheme\Bootstrap4\Menu
         'style' => ['float' => 'right']
     ];
 
-    public function toString() : string
-    {
-        $return = parent::toString();
-
-        //$return .= '<div style="clear: left;"></div>';
-
-        return $return;
-    }
-
 }
