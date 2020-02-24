@@ -63,7 +63,7 @@ class Theme extends \PhpTheme\Bootstrap4\Theme
 
     public function beginLayout(array $options = [])
     {
-        $this->_layout = $this->beginWidget(static::LAYOUT, array_merge($options, ['theme' => $this]));
+        $this->_layout = $this->beginWidget(static::LAYOUT, $options);
 
         return $this->_layout;
     }
@@ -75,12 +75,12 @@ class Theme extends \PhpTheme\Bootstrap4\Theme
 
     public function layout(array $options = [])
     {
-        return $this->widget(static::LAYOUT, array_merge($options, ['theme' => $this]));
+        return $this->widget(static::LAYOUT, $options);
     }
     
     public function mainLayout(array $options = [])
     {
-        return $this->widget(static::MAIN_LAYOUT, array_merge($options, ['theme' => $this]));
+        return $this->widget(static::MAIN_LAYOUT, $options);
     }
 
     public function mainMenu(array $options = [])
