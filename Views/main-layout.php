@@ -38,15 +38,14 @@
 
 </div>
 
-<?php if($copyright):?>
-
 <footer class="footer mt-auto py-3">
     <div class="container">
+        <?= $socialMenu;?>
         <?= $footerMenu;?>
-        <span class="text-muted"><?= $copyright;?></span>
+        <?php if($copyright):?>
+            <span class="text-muted"><?= $copyright;?></span>
+        <?php endif;?>
     </div>
 </footer>
-
-<?php endif;?>
 
 <?php $this->theme->endLayout();?>

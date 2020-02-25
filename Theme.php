@@ -17,6 +17,8 @@ class Theme extends \PhpTheme\Bootstrap4\Theme
 
     const USER_MENU = UserMenu::class;
 
+    const SOCIAL_MENU = SocialMenu::class;
+
     const ACTION_MENU = ActionMenu::class;
 
     const FOOTER_MENU = FooterMenu::class;
@@ -96,6 +98,11 @@ class Theme extends \PhpTheme\Bootstrap4\Theme
     public function userMenu(array $options = [])
     {
         return $this->widget(static::USER_MENU, $options);
+    }
+
+    public function socialMenu(array $options = [])
+    {
+        return $this->widget(static::SOCIAL_MENU, $options);
     }
 
     public function actionMenu(array $options = [])

@@ -49,6 +49,10 @@ class MainLayout extends \PhpTheme\Core\Widget
 
     public $copyright;
 
+    public $socialMenu = [];
+
+    public $socialMenuOptions = [];
+
     public function toString() : string
     {
         $breadcrumbs = $this->breadcrumbsOptions;
@@ -97,12 +101,7 @@ class MainLayout extends \PhpTheme\Core\Widget
             ));
         }
 
-        $footerMenu = $this->theme->footerMenu(array_merge(
-            $this->footerMenuOptions,
-            [
-                'items' => $this->footerMenu
-            ]
-        ));
+        $footerMenu = $this->theme->footerMenu(array_merge($this->footerMenuOptions, ['items' => $this->footerMenu]));
 
         $layout = $this->layout;
 
@@ -110,6 +109,8 @@ class MainLayout extends \PhpTheme\Core\Widget
         {
             $layout['title'] = $this->title;
         }
+
+        $socialMenu = $this->theme->socialMenu(array_merge($this->socialMenuOptions, ['items' => $this->socialMenu]));
 
         return $this->render('main-layout', [
             'layout' => $layout,
@@ -125,6 +126,7 @@ class MainLayout extends \PhpTheme\Core\Widget
             'successMessages' => $this->successMessages,
             'userMenu' => $userMenu,
             'footerMenu' => $footerMenu,
+            'socialMenu' => $socialMenu,
             'accountMenu' => ''
         ]);
     }
