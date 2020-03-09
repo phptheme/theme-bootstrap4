@@ -13,7 +13,11 @@ class MainLayout extends \PhpTheme\Core\Widget
 
     public $title;
 
-    public $siteName = 'Company name';
+    public $siteName;
+
+    public $siteTitle;
+
+    public $siteDescription;
 
     public $mainMenu;
 
@@ -118,6 +122,8 @@ class MainLayout extends \PhpTheme\Core\Widget
             'title' => $this->title,
             'copyright' => $this->theme->getCopyright($this->copyright),
             'siteName' => $this->siteName,
+            'siteTitle' => $this->siteTitle,
+            'siteDescription' => $this->siteDescription,
             'mainMenu' => $mainMenu,
             'actionMenu' => $actionMenu,
             'breadcrumbs' => $breadcrumbs,

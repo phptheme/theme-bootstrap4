@@ -1,5 +1,7 @@
 <?php $this->theme->beginLayout($layout);?>
 
+<?= $backgroundUrl;?>
+
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
 
   <h5 class="my-0 mr-md-auto font-weight-normal"><?= $siteName;?></h5>
@@ -9,6 +11,13 @@
 </div>
 
 <div class="container">
+
+<?php if($siteTitle || $siteDescription):?>
+<div class="text-center">
+    <?php if($siteTitle):?><h2><?= $siteTitle;?></h2><?php endif;?>
+    <?php if($siteDescription):?><p class="lead"><?= $siteDescription;?></p><?php endif;?>
+</div>
+<?php endif;?>
 
 <?= $this->theme->breadcrumbs($breadcrumbs);?>
 
