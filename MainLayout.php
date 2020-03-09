@@ -57,6 +57,8 @@ class MainLayout extends \PhpTheme\Core\Widget
 
     public $socialMenuOptions = [];
 
+    public $backgroundImage;
+
     public function toString() : string
     {
         $breadcrumbs = $this->breadcrumbsOptions;
@@ -116,6 +118,11 @@ class MainLayout extends \PhpTheme\Core\Widget
 
         $socialMenu = $this->theme->socialMenu(array_merge($this->socialMenuOptions, ['items' => $this->socialMenu]));
 
+        if ($this->backgroundImage)
+        {
+            $layout['backgroundImage'] = $this->backgroundImage;
+        }
+
         return $this->render('main-layout', [
             'layout' => $layout,
             'content' => $this->content,
@@ -133,7 +140,8 @@ class MainLayout extends \PhpTheme\Core\Widget
             'userMenu' => $userMenu,
             'footerMenu' => $footerMenu,
             'socialMenu' => $socialMenu,
-            'accountMenu' => ''
+            'accountMenu' => '',
+            'backgroundImage' => $this->backgroundImage
         ]);
     }
 
