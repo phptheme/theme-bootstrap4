@@ -8,15 +8,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="<?= $this->theme->baseUrl;?>/js/bootstrap.bundle.min.js"></script>
 <?= $this->theme->head;?>
-<?php if($backgroundImage):?>
-<style type="text/css">
-    body
-    {
-        background-image: "<?= $backgroundImage;?>";
-        background-repeat: repeat;
-    }
-</style>
-<?php endif;?>
 </head>
 <body class="d-flex flex-column h-100">
 <?= $this->theme->beginBody;?>

@@ -10,8 +10,23 @@
 
 <div class="container">
 
+<?php if($backgroundImage):?>
+<style type="text/css">
+    #site-title
+    {
+        padding: 20px;
+        background-image: url(<?= $backgroundImage;?>);
+        background-color: #6c757d;
+        background-repeat: repeat;
+        color: #ffffff;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+</style>
+<?php endif;?>    
+
 <?php if($siteTitle || $siteDescription):?>
-<div class="text-center">
+<div class="text-center" id="site-title">
     <?php if($siteTitle):?><h2><?= $siteTitle;?></h2><?php endif;?>
     <?php if($siteDescription):?><p class="lead"><?= $siteDescription;?></p><?php endif;?>
 </div>
