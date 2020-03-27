@@ -1,3 +1,3 @@
-<p class="blog-post-meta"><?= $created;?></p>
-
 <?= $text;?>
+
+<p class="blog-post-meta"><?= $created;?></p>
